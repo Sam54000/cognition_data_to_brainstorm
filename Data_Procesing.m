@@ -1,22 +1,27 @@
-
+% You need 
+% - SEEG file (ELECTRODSE COORDINATES) exported from brainstorm you will
+%   name bst_seeg
+% - table exported from letswave (rename each table with its appopriate
+%   name P1, P2 and P3)
+val(:,1) = cellfun(@(x) str2double(x), tableP1(:,7)); %raw values P1
+val(:,2) = cellfun(@(x) str2double(x), tableP2(:,7)); %raw values P2
+val(:,3) = cellfun(@(x) str2double(x), tableP3(:,7)); %raw values P3
+tableP1(:,7) = num2cell(val(:,1));
+tableP2(:,7) = num2cell(val(:,2));
+tableP3(:,7) = num2cell(val(:,3));
 
 %% Data preparation
 % Import from brainstorm the SEEG file
 
 PatientName = 'LIN_NA'; %Put the patient code
-comment = 'Modulation_percentage_Z_score_P3'; %name of the file Put the results of the calculation (SBL or Z score or SNR)
-experimentName = 'Percentage values'; %Name of the folder Put raw values if you want to plot only for P1 or P2 or P3
+comment = 'Z_scoreP3'; %name of the file Put the results of the calculation (SBL or Z score or SNR)
+experimentName = 'Percentage'; %Name of the folder Put raw values if you want to plot only for P1 or P2 or P3
                                %Put percentage if you want to plot the
                                %percentage of modulation between tDCS
                                %states (P1/P2/P3)
 
+
  %% If you need to calculate percentage
-val(:,1) = cellfun(@(x) str2double(x), tableP1(:,7)); %raw values P1
-val(:,2) = cellfun(@(x) str2double(x), tableP2(:,7)); %raw values P2
-val(:,3) = cellfun(@(x) str2double(x), tableP3(:,7)); %raw values P3
-P1(:,7) = num2cell(val(:,1));
-P2(:,7) = num2cell(val(:,2));
-P3(:,7) = num2cell(val(:,3));
 
 percentage(:,1) = (val(:,2)-val(:,1)).*100./val(:,1); %P2 VS P1
 percentage(:,2) = (val(:,3)-val(:,1)).*100./val(:,1); %P3 VS P1
@@ -27,8 +32,8 @@ perc2 = tableP1;
 perc3 = tableP1;
 
 perc1(:,7) = num2cell(percentage(:,1));
-perc2(:,7) = num2cell(percentage(:,1));
-perc3(:,7) = num2cell(percentage(:,1));
+perc2(:,7) = num2cell(percentage(:,2));
+perc3(:,7) = num2cell(percentage(:,3));
 
 
 %% Export to matlab
