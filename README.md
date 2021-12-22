@@ -10,8 +10,11 @@ Before starting the script you need to:
 Usage:
 ``` [values,coordinates] = process_data_cogBST ``` 
 
-The first step is to provide the information in the window (see screenshot):
+The first step is to provide the information in the window (see screenshot below):
 
 ![input](/Input.PNG)
 
-The second step constist to select the three corresponding matrices generated from Letswave: P1, P2 and P3.
+The second step constists to select the three corresponding matrices generated from Letswave: P1, P2 and P3.
+Select the file indicated at the top of the explorer window (see screnshot below):
+
+![selection window](/Select_file.PNG)
