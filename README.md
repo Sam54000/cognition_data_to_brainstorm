@@ -1,4 +1,10 @@
 # Processing data cognition into brainstorm
+
+to process P1, P2 and P3 at the same time use:
+``` process_data_cogBST.m ``` 
+to process P1 or P2 or P3 individually use:
+``` convert_letswave_to_brainstorm.m ``` 
+
 The path where the file process_data_cogBST needs to be added in matlab (Home -> Set Path -> Add folder).
 ### Preprocessing
 Before starting the script you need to:
@@ -8,6 +14,7 @@ Before starting the script you need to:
 
 ### Processing
 Usage:
+write in the command widow
 ``` [values,coordinates] = process_data_cogBST ``` 
 
 The first step is to provide the information in the window (see screenshot below):
