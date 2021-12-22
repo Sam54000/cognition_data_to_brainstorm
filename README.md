@@ -1,7 +1,7 @@
 # Processing data cognition into brainstorm
 
 To process P1, P2 and P3 at the same time use:
-``` process_data_cogBST.m ``` [see tutorial](https://github.com/Sam54000/cognition_data_to_brainstorm/edit/main/README.md## Tutorial for ``` process_data_cogBST.m ```)
+``` process_data_cogBST.m ``` [see tutorial](https://github.com/Sam54000/cognition_data_to_brainstorm/blob/main/README.md#tutorial-for-process_data_cogbstm)
 
 To process P1 or P2 or P3 individually use:
 ``` convert_letswave_to_brainstorm.m ``` 
