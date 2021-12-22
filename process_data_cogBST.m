@@ -76,7 +76,7 @@ Values(:,3) = [TableP3{:,7}].';
 iStudy = db_add_condition(DataParameters{1,1}, DataParameters{2,1});
 studyStruct = bst_get('Study', iStudy);
 protocolStruct = bst_get('ProtocolInfo');
-[Output, ChannelFile, FileFormat] = import_channel(iStudy,...
+import_channel(iStudy,...
     [PATHNAMEcoord FILENAMEcoord],...
     'ASCII_NXYZ',...
     1,...
@@ -101,9 +101,9 @@ sMatP1.F       = values(:,1);
 sMatP2.F       = values(:,2);
 sMatP3.F       = values(:,3);
 
-sMatP1.Comment = [DataPArameters{2,1} '_raw_P1'];
-sMatP2.Comment = [DataPArameters{2,1} '_raw_P2'];
-sMatP3.Comment = [DataPArameters{2,1} '_raw_P3'];
+sMatP1.Comment = [DataParameters{2,1} '_raw_P1'];
+sMatP2.Comment = [DataParameters{2,1} '_raw_P2'];
+sMatP3.Comment = [DataParameters{2,1} '_raw_P3'];
 
 sMatP1.ChannelFlag = ones(size(coordinates,1));
 sMatP2.ChannelFlag = ones(size(coordinates,1));
@@ -114,9 +114,9 @@ sMatP2.Time = 1;
 sMatP3.Time = 1;
 
 % Create a new folder "Script" in subject "Test"
-iStudy = db_add_condition(DataPArameters{1,1}, DataPArameters{2,1});
+iStudy = db_add_condition(DataParameters{1,1}, DataParameters{2,1});
 % Get the corresponding study structure
-sStudy = bst_get('Study', iStudy);
+bst_get('Study', iStudy);
 db_add(iStudy, sMatP1);
 db_add(iStudy, sMatP2);
 db_add(iStudy, sMatP3);
