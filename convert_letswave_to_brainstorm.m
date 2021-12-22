@@ -9,7 +9,7 @@
 function values = convert_letswave_to_brainstorm(bst_seeg,PatientName,experimentName,letswave_table,comment)
     contacts_from_data = letswave_table(:,3); %export the data
     contacts_from_brainstorm = {bst_seeg.Channel.Name}.'; %export the contacts name
-    [a,b] = ismember(contacts_from_brainstorm,contacts_from_data); %check hich contact is where
+    [a,b] = ismember(contacts_from_brainstorm,contacts_from_data); %check  contact is where
     tmpVal = [letswave_table{:,7}].';
     values = zeros([size(contacts_from_brainstorm,1),1]); %prepare matrix data
     values(a,:) = tmpVal(b(a),1);
