@@ -1,5 +1,7 @@
 # Processing data cognition into brainstorm
 
+**Before processing**: Open brainstorm and create a new subject. The subject's name must be the same than the one used in the following codes in the format 'AAA_BB'.
+
 To process P1, P2 and P3 at the same time use:
 ``` process_data_cogBST.m ``` [See tutorial](https://github.com/Sam54000/cognition_data_to_brainstorm/blob/main/README.md#tutorial-for-process_data_cogbstm)
 
@@ -18,19 +20,20 @@ Before starting the script you need to:
 
 ### Processing
 Usage:
-write in the command widow
+In Maltab, write in the command widow
 ``` [values,coordinates] = process_data_cogBST ``` 
 
-The first step is to provide the information in the window (see screenshot below):
+The first step consists of providing the information in the window (see screenshot below):
+Patient code: the name of the subject created in brainstorm before running the program in the format 'AAA_BB'
 
 ![input](/Input.PNG)
 
-The second step constists to select the three corresponding matrices generated from Letswave: P1, P2 and P3.
+The second step constists of selecting the three corresponding matrices generated from Letswave: P1, P2 and P3.
 Select the file indicated at the top of the explorer window (see screnshot below):
 
 ![selection window](/Select_file.png)
 
-The third step constists to select the coordinates file (.txt)
+The third step constists of selecting the SEEG coordinates file in ```.txt``` format
 
 ### Output
 In  the matlab workspace 2 variables are generated:
@@ -39,6 +42,8 @@ In  the matlab workspace 2 variables are generated:
 
 ## Tutorial for ``` convert_letswave_to_brainstorm.m ```
 This function make possible to convert a results matrix generated from letswave into a brainstorm compatible format
+
+```values = convert_letswave_to_brainstorm(bst_seeg,PatientName,experimentName,letswave_table,comment)```
 
 ### Preprocessing
 Before starting the script you need to:
@@ -55,7 +60,7 @@ Before starting the script you need to:
 Input: 
   - bst_seeg: the electrodes file imported into the matlab workspace from brainstorm (right clic on the electrode's file and export to matlab)
   - letswave_table the table imported from letswave
-  - PatientName   : the patient code
+  - PatientName   : the patient code must be the same as the subject created in brainstorm before running the code in the format 'AAA_BB'.
   - experimentName: The name of the experiment
   - comment       : The file name displayed in brainstorm
         
