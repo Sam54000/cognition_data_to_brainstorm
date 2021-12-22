@@ -17,4 +17,11 @@ The first step is to provide the information in the window (see screenshot below
 The second step constists to select the three corresponding matrices generated from Letswave: P1, P2 and P3.
 Select the file indicated at the top of the explorer window (see screnshot below):
 
-![selection window](/Select_file.PNG)
+![selection window](/Select_file.png)
+
+The third step constists to select the coordinates file (.txt)
+
+### Output
+In  the matlab workspace 2 variables are generated:
+  - values: a MxN matrix where M is the number of intracerebral contacts and N the number of experimental states (Here N = 3 for P1, P2 and P3)
+  - coordinates: a Mx4 table where M is the number of intracerebral contacts. The first column is the name of the intracerebral contact and the three others are the coordinates       X,Y and Z
