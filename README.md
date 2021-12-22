@@ -1,11 +1,14 @@
 # Processing data cognition into brainstorm
 
-to process P1, P2 and P3 at the same time use:
-``` process_data_cogBST.m ``` 
-to process P1 or P2 or P3 individually use:
+To process P1, P2 and P3 at the same time use:
+``` process_data_cogBST.m ``` [see tutorial](https://github.com/Sam54000/cognition_data_to_brainstorm/edit/main/README.md## Tutorial for ``` process_data_cogBST.m ```)
+
+To process P1 or P2 or P3 individually use:
 ``` convert_letswave_to_brainstorm.m ``` 
 
 The path where the file process_data_cogBST needs to be added in matlab (Home -> Set Path -> Add folder).
+
+## Tutorial for ``` process_data_cogBST.m ``` 
 ### Preprocessing
 Before starting the script you need to:
   - Importing patient's MRI into brainstorm
