@@ -1,10 +1,10 @@
 # Processing data cognition into brainstorm
 
 To process P1, P2 and P3 at the same time use:
-``` process_data_cogBST.m ``` [see tutorial](https://github.com/Sam54000/cognition_data_to_brainstorm/blob/main/README.md#tutorial-for-process_data_cogbstm)
+``` process_data_cogBST.m ``` [See tutorial](https://github.com/Sam54000/cognition_data_to_brainstorm/blob/main/README.md#tutorial-for-process_data_cogbstm)
 
 To process P1 or P2 or P3 individually use:
-``` convert_letswave_to_brainstorm.m ``` 
+``` convert_letswave_to_brainstorm.m ``` [See tutorial](https://github.com/Sam54000/cognition_data_to_brainstorm/blob/main/README.md#convert_letswave_to_brainstormm)
 
 The path where the file process_data_cogBST needs to be added in matlab (Home -> Set Path -> Add folder).
 
@@ -35,3 +35,22 @@ The third step constists to select the coordinates file (.txt)
 In  the matlab workspace 2 variables are generated:
   - values: a MxN matrix where M is the number of intracerebral contacts and N the number of experimental states (Here N = 3 for P1, P2 and P3)
   - coordinates: a Mx4 table where M is the number of intracerebral contacts. The first column is the name of the intracerebral contact and the three others are the coordinates       X,Y and Z
+
+## Tutorial for ``` convert_letswave_to_brainstorm.m ```
+This function make possible to convert a results matrix generated from letswave into a brainstorm compatible format
+
+Input: 
+        - bst_seeg: the electrodes file imported into the matlab workspace 
+                    from brainstorm (right clic on the electrode's file 
+                    and export to matlab)
+        - letswave_table the table imported from letswave
+        - PatientName   : the patient code
+        - experimentName: The name of the experiment
+        - comment       : The file name displayed in brainstorm
+        
+Output: a brainstorm formated file to import then into brainstorm.
+The matrix is automatically uploaded in brainstorm
+
+Example of usage: 
+
+```values = convert_letswave_to_brainstorm(bst_seeg,'LOU_SA','Raw_data',letswave_table,'Z_score')```
