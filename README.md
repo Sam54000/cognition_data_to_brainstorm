@@ -9,4 +9,7 @@ Before starting the script you need to:
 ### Processing
 Usage:
 ``` [values,coordinates] = process_data_cogBST ``` 
+
+The first step is to provide the information in the window (see screenshot)
+
 ![input](/Input.PNG)
