@@ -53,13 +53,11 @@ Before starting the script you need to:
                    Once the electrode coordinates are uploaded in brainstorm, right click on 'Channels' -> 'File' -> 'Export to Maltab'
 ### Processing
 Input: 
-        - bst_seeg: the electrodes file imported into the matlab workspace 
-                    from brainstorm (right clic on the electrode's file 
-                    and export to matlab)
-        - letswave_table the table imported from letswave
-        - PatientName   : the patient code
-        - experimentName: The name of the experiment
-        - comment       : The file name displayed in brainstorm
+  - bst_seeg: the electrodes file imported into the matlab workspace from brainstorm (right clic on the electrode's file and export to matlab)
+  - letswave_table the table imported from letswave
+  - PatientName   : the patient code
+  - experimentName: The name of the experiment
+  - comment       : The file name displayed in brainstorm
         
 Output: a brainstorm formated file to import then into brainstorm.
 
