@@ -1,7 +1,7 @@
-function process_data_cogBST
+function [values,coordinates] = process_data_cogBST
 clear; clc;
 
-prompt = {'Enter Patient Code','Results type (Z_score, SBL or SNR)'};
+prompt = {'Enter Patient Code','Results type (Z_score, SBL, SNR or other)'};
 DataParameters = inputdlg(prompt,'Patient Identification',1,{'AAA_BB','Z_score'}); %Open a dialogbox to put the information
 
 [FILENAMEp1, PATHNAMEp1, ~] = uigetfile('*.mat', 'Choose your P1 file'); %Open a window to choose your files
@@ -58,9 +58,9 @@ Values(:,1) = [TableP1{:,7}].';
 Values(:,2) = [TableP2{:,7}].';
 Values(:,3) = [TableP3{:,7}].';
 
-percentage(:,1) = (Values(:,2)-Values(:,1)).*100./Values(:,1); %P2 VS P1
-percentage(:,2) = (Values(:,3)-Values(:,1)).*100./Values(:,1); %P3 VS P1
-percentage(:,3) = (Values(:,3)-Values(:,2)).*100./Values(:,2); %P2 VS P3
+% percentage(:,1) = (Values(:,2)-Values(:,1)).*100./Values(:,1); %P2 VS P1
+% percentage(:,2) = (Values(:,3)-Values(:,1)).*100./Values(:,1); %P3 VS P1
+% percentage(:,3) = (Values(:,3)-Values(:,2)).*100./Values(:,2); %P2 VS P3
 
 
 %% Intracerebral coordinates generation in brainstorm
@@ -113,29 +113,29 @@ db_add(iStudy, sMatP2);
 db_add(iStudy, sMatP3);
 
 %%
-clear sMatP1 sMatP2 sMatP3
-sMatP1 = db_template('datamat');
-sMatP2 = db_template('datamat');
-sMatP3 = db_template('datamat');
-% Fill the required fields of the structure
-sMatP1.F       = percentage(:,1);
-sMatP2.F       = percentage(:,2);
-sMatP3.F       = percentage(:,3);
-
-sMatP1.Comment = [DataPArameters{2,1} '_percentage_P1'];
-sMatP2.Comment = [DataPArameters{2,1} '_percentage_P2'];
-sMatP3.Comment = [DataPArameters{2,1} '_percentage_P3'];
-
-sMatP1.ChannelFlag = ones(size(coordinates,1));
-sMatP2.ChannelFlag = ones(size(coordinates,1));
-sMatP3.ChannelFlag = ones(size(coordinates,1));
-
-sMatP1.Time = 1;
-sMatP2.Time = 1;
-sMatP3.Time = 1;
-
-% Get the corresponding study structure
-db_add(iStudy, sMatP1);
-db_add(iStudy, sMatP2);
-db_add(iStudy, sMatP3);
+% clear sMatP1 sMatP2 sMatP3
+% sMatP1 = db_template('datamat');
+% sMatP2 = db_template('datamat');
+% sMatP3 = db_template('datamat');
+% % Fill the required fields of the structure
+% sMatP1.F       = percentage(:,1);
+% sMatP2.F       = percentage(:,2);
+% sMatP3.F       = percentage(:,3);
+% 
+% sMatP1.Comment = [DataPArameters{2,1} '_percentage_P1'];
+% sMatP2.Comment = [DataPArameters{2,1} '_percentage_P2'];
+% sMatP3.Comment = [DataPArameters{2,1} '_percentage_P3'];
+% 
+% sMatP1.ChannelFlag = ones(size(coordinates,1));
+% sMatP2.ChannelFlag = ones(size(coordinates,1));
+% sMatP3.ChannelFlag = ones(size(coordinates,1));
+% 
+% sMatP1.Time = 1;
+% sMatP2.Time = 1;
+% sMatP3.Time = 1;
+% 
+% % Get the corresponding study structure
+% db_add(iStudy, sMatP1);
+% db_add(iStudy, sMatP2);
+% db_add(iStudy, sMatP3);
 end
