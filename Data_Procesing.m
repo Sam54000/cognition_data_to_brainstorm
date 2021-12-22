@@ -1,3 +1,15 @@
+%% Data_Processing for cognition data to brainstorm
+% Author : Samuel Louviot 
+% samuel.louviot@univ-lorraine.fr
+% sam.louviot@gmail.com
+% date : December 2021
+% CRAN UMR7039 CNRS Université de Lorraine 
+% département BioSiS 
+% Projet Neurosciences des systemes et de la cognition
+% 
+% This program need to be run section by section
+%%
+
 % You need 
 % - SEEG file (ELECTRODSE COORDINATES) exported from brainstorm you will
 %   name bst_seeg

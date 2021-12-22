@@ -1,5 +1,14 @@
 function [values,coordinates] = process_data_cogBST
-clear; clc;
+%% process_data_cogBST
+% process the data generated from letswave into brainstorm
+%% Author : Samuel Louviot 
+% samuel.louviot@univ-lorraine.fr
+% sam.louviot@gmail.com
+% date : December 2021
+% CRAN UMR7039 CNRS Université de Lorraine 
+% département BioSiS 
+% Projet Neurosciences des systemes et de la cognition
+%
 
 prompt = {'Enter Patient Code','Results type (Z_score, SBL, SNR or other)'};
 DataParameters = inputdlg(prompt,'Patient Identification',1,{'AAA_BB','Z_score'}); %Open a dialogbox to put the information
