@@ -9,4 +9,4 @@ Before starting the script you need to:
 ### Processing
 Usage:
 ``` [values,coordinates] = process_data_cogBST ``` 
-![input](/Input.png)
+![input](/Input.PNG)
