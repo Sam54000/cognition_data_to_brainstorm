@@ -7,10 +7,6 @@
 % Output: a brainstorm formated file to import then into brainstorm.
 
 function values = convert_letswave_to_brainstorm(bst_seeg,PatientName,experimentName,letswave_table,comment)
-
-    [FILENAMEcoord, PATHNAMEcoord, ~] = uigetfile({'*.txt',...
-    'ASCII_NAME_XYZ (*.txt)'}, 'Choose the coordinates file');
-
     contacts_from_data = letswave_table(:,3); %export the data
     contacts_from_brainstorm = {bst_seeg.Channel.Name}.'; %export the contacts name
     [a,b] = ismember(contacts_from_brainstorm,contacts_from_data); %check  contact is where
