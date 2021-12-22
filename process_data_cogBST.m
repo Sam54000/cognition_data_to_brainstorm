@@ -19,9 +19,9 @@ DataParameters = inputdlg(prompt,'Patient Identification',1,{'AAA_BB','Z_score'}
 [FILENAMEcoord, PATHNAMEcoord, ~] = uigetfile({'*.txt',...
     'ASCII_NAME_XYZ (*.txt)'}, 'Choose the coordinates file');
 
-structureP1 = load([PATHNAMEp1 filesep FILENAMEp1]); %load the choosen files
-structureP2 = load([PATHNAMEp2 filesep FILENAMEp2]);
-structureP3 = load([PATHNAMEp3 filesep FILENAMEp3]);
+structureP1 = load([PATHNAMEp1 FILENAMEp1]); %load the choosen files
+structureP2 = load([PATHNAMEp2 FILENAMEp2]);
+structureP3 = load([PATHNAMEp3 FILENAMEp3]);
 
 TableP1 = structureP1.Table;
 TableP2 = structureP2.Table;

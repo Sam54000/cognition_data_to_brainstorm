@@ -1,6 +1,6 @@
 function values = convert_letswave_to_brainstorm(bst_seeg,PatientName,experimentName,letswave_table,comment)
-%% This function makes possible to convert your data exported from letswave
-% into a brainstorm valid format.
+%% This function makes possible to convert data exported from letswave
+% into a brainstorm compatible format.
 % Input: 
 %        - bst_seeg: the electrodes file imported into the matlab workspace 
 %                    from brainstorm (right clic on the electrode's file 
