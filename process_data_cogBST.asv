@@ -87,7 +87,7 @@ import_channel(iStudy,...
 coordinates = readtable([PATHNAMEcoord FILENAMEcoord]);
 %% 
 
-values = zeros([size(coordinates,1),3]);
+values = zeros([size(coordinates,1),1]);
 [a,b] = ismember(coordinates{:,1},letswave_contacts);
 values(a,:) = Values(b(a),:);
 
